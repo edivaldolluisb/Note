@@ -8,9 +8,7 @@ import { Github } from 'lucide-react';
 function Login() {
 
 	return (
-		<>
 			<div className="bg-white">
-
 				<div className="relative isolate px-6 pt-14 lg:px-8">
 					<div
 						className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -43,13 +41,10 @@ function Login() {
 						</div>
 						<div className="text-center">
 							<h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-								Is it a simple note ?
+								Just a Note 
 							</h1>
 							<p className="mt-6 text-lg leading-8 text-gray-600">
-								Yes It is. Just never miss a thought! NoteApp
-								lets you capture ideas, and access them anytime,
-								anywhere. It's your all-in-one digital notebook
-								for a more productive you.
+								Very simple, great to see you here! 😎
 							</p>
 
                             {/* Form */}
@@ -81,7 +76,6 @@ function Login() {
 					</div>
 				</div>
 			</div>
-		</>
 	);
 }
 
