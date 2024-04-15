@@ -15,7 +15,7 @@ function Note({ note, onDelete }) {
             </button>
         </div>*/}
 
-			<div className="bg-red-50 h-screen flex justify-center items-center flex-col p-10">
+			<div className="bg-red-50 h-dvh flex justify-center items-center flex-col p-5">
 				<h2 className="text-4xl mb-5">{note.title}</h2> 
         <p className="note-date">{formattedDate}</p>
 				<p className="mb-5">{note.content}</p>
