@@ -15,10 +15,10 @@ function Note({ note, onDelete }) {
             </button>
         </div>*/}
 
-			<div className="bg-red-50 h-dvh flex justify-center items-center flex-col p-5">
-				<h2 className="text-4xl mb-5">{note.title}</h2> 
+			<div className="bg-wh flex justify-center flex-col p-5">
+				<h2 className="text-4xl font-extrabold dark:text-white">{note.title}</h2> 
         <p className="note-date">{formattedDate}</p>
-				<p className="mb-5">{note.content}</p>
+				<p className="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">{note.content}</p>
             <button className="delete-button" onClick={() => onDelete(note.id)}>
                 Delete
             </button>
