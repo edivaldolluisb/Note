@@ -45,51 +45,63 @@ function Home() {
 
 	return (
 		<div>
-            {/* List Notes */}
-			<div className="bg-white py-24 sm:py-32">
-				<div className="mx-auto max-w-7xl px-6 lg:px-8">
-					<div className="mx-auto max-w-2xl lg:mx-0">
-						<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-							My notes
-						</h2>
-						<p className="mt-2 text-lg leading-8 text-gray-600">
-                            Here are some notes I've taken. They are simple
-						</p>
+			<div className="relative">
+				<div className="relative md:fixed w-full md:w-7/12 min-h-screen inset-0">
+					<div className="absolute top-0 right-0 bottom-0 left-0 m-auto p-20">
+						{/* Note Form */}
+						<h2 className="text-white text-2xl my-1 text-center">Create a Note 🌳</h2>
+						<form onSubmit={createNote} >
+							<label htmlFor="title">Title:</label>
+							<br />
+							<input
+								type="text"
+								id="title"
+								name="title"
+								required
+								onChange={(e) => setTitle(e.target.value)}
+								value={title}
+							/>
+							<label htmlFor="content">Content:</label>
+							<br />
+							<textarea
+								id="content"
+								name="content"
+								required
+								value={content}
+								onChange={(e) => setContent(e.target.value)}
+							></textarea>
+							<br />
+							<input type="submit" value="Submit"></input>
+						</form>
 					</div>
-					{<div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                        {notes.map((note) => (
-                            <Note note={note} onDelete={deleteNote} key={note.id} />
-                        ))}
-					</div>}
+
+					<img
+						src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=935&q=80"
+						className="object-cover w-full h-full"
+					/>
+				</div>
+
+				{/* List Notes */}
+				<div className="w-full md:w-5/12 ml-auto">
+					{notes.map((note) => (
+						<Note note={note} onDelete={deleteNote} key={note.id} />
+					))}
+					{/*<div className="bg-red-200 h-screen flex justify-center items-center flex-col p-10">
+						<h2 className="text-4xl mb-5">Meet Benny</h2>
+						<p className="mb-5">I was born 20 May 2020</p>
+					</div>
+					<div className="bg-red-50 h-screen flex justify-center items-center flex-col p-10">
+						<h2 className="text-4xl mb-5">I love food</h2>
+						<p className="mb-5">Bones, Pallets, and more!</p>
+					</div>
+					<div className="bg-red-200 h-screen flex justify-center items-center flex-col p-10">
+						<h2 className="text-4xl mb-5">I love my humans</h2>
+						<p className="mb-5">
+							My humans are super special to me, and I love them
+						</p>
+					</div>*/}
 				</div>
 			</div>
-
-
-			{/* Note Form */}
-			<h2>Create a Note</h2>
-			<form onSubmit={createNote}>
-				<label htmlFor="title">Title:</label>
-				<br />
-				<input
-					type="text"
-					id="title"
-					name="title"
-					required
-					onChange={(e) => setTitle(e.target.value)}
-					value={title}
-				/>
-				<label htmlFor="content">Content:</label>
-				<br />
-				<textarea
-					id="content"
-					name="content"
-					required
-					value={content}
-					onChange={(e) => setContent(e.target.value)}
-				></textarea>
-				<br />
-				<input type="submit" value="Submit"></input>
-			</form>
 		</div>
 	);
 }

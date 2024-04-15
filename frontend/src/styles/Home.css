@@ -24,7 +24,7 @@ div {
 
 /* Styles for the form section */
 form {
-  background-color: #fff;
+  background-color: #ffffff39;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -39,6 +39,7 @@ form h2 {
 }
 
 form label {
+  color: #fff;
   font-weight: bold;
   margin-top: 10px;
 }
